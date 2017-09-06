@@ -5,6 +5,9 @@
 //  Created by alldk on 2017/8/23.
 //  Copyright © 2017年 alldk. All rights reserved.
 //
+/* lzy170906注:
+ 
+ */
 
 #import "ViewController.h"
 
@@ -25,11 +28,13 @@
     [super viewDidLoad];
     
 //    [self test1];
+    [self test2];
+//    [self test3];
     
-//    [self test2];
-    [self test3];
+//    [self test4];
     
-    [self test4];
+    #pragma mark - ================== 官方demo ==================
+    
 }
 
 - (void)test4{
@@ -141,6 +146,9 @@
     }];
 }
 
+/* lzy170906注:
+ http://www.cnblogs.com/HypeCheng/articles/4177558.html
+ */
 - (void)test2{
     UIView *sv = [UIView new];
     [sv showPlaceHolder];
@@ -150,18 +158,7 @@
         make.center.equalTo(self.view);
         make.size.mas_equalTo(CGSizeMake(300, 300));
     }];
-//    UIView *pv = [UIView new];
-//    [self.view addSubview:pv];
-//    [pv showPlaceHolder];
-//    pv.backgroundColor = [UIColor purpleColor];
-//    [pv mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.equalTo(sv);
-//        make.size.mas_equalTo(CGSizeMake(100, 100));
-//    }];
-//    
-//    [pv mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.size.mas_equalTo(CGSizeMake(20, 100));
-//    }];
+    
     
     UIView *sv1 = [UIView new];
     [sv addSubview:sv1];
@@ -169,77 +166,100 @@
     sv1.backgroundColor = [UIColor purpleColor];
     
     [sv1 mas_makeConstraints:^(MASConstraintMaker *make) {
+        // lzy170906注：等价的写法；不要同时写多句，会造成意想不到的效果
 //        make.edges.equalTo(sv).with.insets(UIEdgeInsetsMake(10, 10, 10, 10));
+//        make.top.left.bottom.right.equalTo(sv).with.insets(UIEdgeInsetsMake(10, 10, 10, 10));
+//        make.edges.equalTo(sv).insets(UIEdgeInsetsMake(1, 1, 1, 1));
         
 //        make.top.equalTo(sv).with.offset(10);
 //        make.left.equalTo(sv).with.offset(10);
 //        make.bottom.equalTo(sv).with.offset(-10);
 //        make.right.equalTo(sv).with.offset(-10);
 
-        make.top.left.bottom.right.equalTo(sv).with.insets(UIEdgeInsetsMake(10, 10, 10, 10));
-        
+
     }];
     
     int padding1 = 10;
     
-    UIView *sv2 = [UIView new];
-    [sv addSubview:sv2];
-    [sv2 showPlaceHolder];
-    sv2.backgroundColor = [UIColor lightGrayColor];
-    
-    
-    
-    UIView *sv3 = [UIView new];
-    [sv addSubview:sv3];
-    [sv3 showPlaceHolder];
-    sv3.backgroundColor = [UIColor lightGrayColor];
-    
-    [sv2 mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.mas_equalTo(sv.mas_centerY);
-        make.left.equalTo(sv.mas_left).with.offset(padding1);
-        make.right.equalTo(sv3.mas_left).with.offset(-padding1);
-        make.height.mas_equalTo(@150);
-        make.width.equalTo(sv3);
-    }];
-    
-    [sv3 mas_makeConstraints:^(MASConstraintMaker *make) {
-       
-        make.centerY.mas_equalTo(sv.mas_centerY);
-        make.left.equalTo(sv2.mas_right).with.offset(padding1);
-        make.right.equalTo(sv.mas_right).with.offset(-padding1);
-        make.height.mas_equalTo(@150);
-        make.width.equalTo(sv2);
-        
-    }];
+//    UIView *sv2 = [UIView new];
+//    [sv addSubview:sv2];
+//    [sv2 showPlaceHolder];
+//    sv2.backgroundColor = [UIColor lightGrayColor];
+//    
+//    
+//    
+//    UIView *sv3 = [UIView new];
+//    [sv addSubview:sv3];
+//    [sv3 showPlaceHolder];
+//    sv3.backgroundColor = [UIColor lightGrayColor];
+//    
+//    [sv2 mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerY.mas_equalTo(sv.mas_centerY);
+//        make.left.equalTo(sv.mas_left).with.offset(padding1);
+//        make.right.equalTo(sv3.mas_left).with.offset(-padding1);
+//        make.height.mas_equalTo(@150);
+//        make.width.equalTo(sv3);
+//    }];
+//    
+//    [sv3 mas_makeConstraints:^(MASConstraintMaker *make) {
+//       
+//        make.centerY.mas_equalTo(sv.mas_centerY);
+//        make.left.equalTo(sv2.mas_right).with.offset(padding1);
+//        make.right.equalTo(sv.mas_right).with.offset(-padding1);
+//        make.height.mas_equalTo(@150);
+//        make.width.equalTo(sv2);
+//        
+//    }];
 }
 
 
-
+/* lzy170906注:
+iOS中，会将view的布局定义为一系列的线性方程式，存放在UIView的属性中，在view布局的而时候，通过这饿方程式，计算出每一个view的frame来完成布局。这就是autolayout。
+ autolayout将所有的而方程式用constraint表示，存放在view的属性constraints下。
+ @property (nonatomic, readonly)NSArray<__kindof NSLayoutConstraint *> *constraints NS_AVAILABLE_IOS(6_0)
+ 每一个constraint，表示一个相等或不相等（大于、小于）关系。
+ 文章http://www.jianshu.com/p/052e8c7e8e7f
+ 
+ */
 - (void)test1{
     
     UILabel *label1 = [UILabel new];
-    label1.text = @"你好";
+    label1.text = @"你";
     [self.view addSubview:label1];
     [label1 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@(100));
     }];
+
+
     
     
     UILabel *label2 = [UILabel new];
-    label2.text = @"你妈喊你回家吃饭辣";
+    label2.text = @"你妈喊你回家吃饭辣阿凡达嘀嗒嘀嗒嘀嗒";
     [self.view addSubview:label2];
     
     [label2 mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@(300));
-  
     }];
     
     
     [@[label1,label2] mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@100).priority(500);
+        
     }];
     label1.backgroundColor = [UIColor purpleColor];
     label2.backgroundColor = [UIColor grayColor];
+
+
+    /* lzy170906注:
+
+     1. Label1，显示几个文字，明显足够，它的IntrinsicContentSize宽度比100px小，所以当添加一个宽度为100px的约束时，ContentHugging在起作用。ContentHugging的优先级为250。宽度为100px的约束，优先级为500，大于ContentHugging。所以宽度为100px.
+     2. Label2，显示几个文字需要的长度较大，它的IntrinsicContentSize宽度比100px大。所以当添加一个宽度为100px的约束时，CompressionResistance在起作用，CompressionResistance的优先级为750。宽度为100px的约束，优先级为500，小于CompressionResistance。所以宽度还是IntrinsicContentSize的宽度。
+     根据这个例子，大家应该能明白ContentHugging和CompressionResistance是什么意思了吧。
+     
+     这里留个问题给大家，如果设置的不是宽度为100，而是Label1宽度等于Label2宽度，那么会出现什么情况？是都变成Label1的宽度了，还是都变成Label2的宽度了？还是不变？
+     make.width.mas_equalTo(label1.mas_width);
+
+     */
     
     // 在使用了约束之后。手动设置frame是不起作用的
     /* lzy注170824
@@ -256,10 +276,7 @@
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 
 @end
