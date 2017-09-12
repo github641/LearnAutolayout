@@ -16,9 +16,6 @@
 		6CA488AA1F4FB96000FD5613 /* UIView+Mansonry_LJC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CA488A91F4FB96000FD5613 /* UIView+Mansonry_LJC.m */; };
 		849EA54E1F5FE0810062D31C /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849EA54D1F5FE0810062D31C /* TableViewController.m */; };
 		849EA5581F5FE4870062D31C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 849EA5571F5FE4870062D31C /* main.m */; };
-		849EA55B1F5FE4870062D31C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 849EA55A1F5FE4870062D31C /* AppDelegate.m */; };
-		849EA55E1F5FE4870062D31C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849EA55D1F5FE4870062D31C /* ViewController.m */; };
-		849EA5611F5FE4870062D31C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849EA55F1F5FE4870062D31C /* Main.storyboard */; };
 		849EA5631F5FE4870062D31C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 849EA5621F5FE4870062D31C /* Assets.xcassets */; };
 		849EA5661F5FE4870062D31C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 849EA5641F5FE4870062D31C /* LaunchScreen.storyboard */; };
 		849EA5901F5FE4DF0062D31C /* MASAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 849EA56D1F5FE4DF0062D31C /* MASAppDelegate.m */; };
@@ -70,11 +67,6 @@
 		849EA54F1F5FE0E80062D31C /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		849EA5541F5FE4860062D31C /* LearnMasonryOfficialDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnMasonryOfficialDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		849EA5571F5FE4870062D31C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		849EA5591F5FE4870062D31C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		849EA55A1F5FE4870062D31C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		849EA55C1F5FE4870062D31C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		849EA55D1F5FE4870062D31C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		849EA5601F5FE4870062D31C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		849EA5621F5FE4870062D31C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		849EA5651F5FE4870062D31C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		849EA5671F5FE4870062D31C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -213,52 +205,167 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8419523C1F67D15E0055AED4 /* support */ = {
+			isa = PBXGroup;
+			children = (
+				849EA56B1F5FE4C40062D31C /* Masonry iOS Examples-Prefix.pch */,
+				849EA56C1F5FE4DF0062D31C /* MASAppDelegate.h */,
+				849EA56D1F5FE4DF0062D31C /* MASAppDelegate.m */,
+				849EA5821F5FE4DF0062D31C /* MASExampleListViewController.h */,
+				849EA5831F5FE4DF0062D31C /* MASExampleListViewController.m */,
+				849EA58E1F5FE4DF0062D31C /* MASExampleViewController.h */,
+				849EA58F1F5FE4DF0062D31C /* MASExampleViewController.m */,
+			);
+			name = support;
+			sourceTree = "<group>";
+		};
+		8419523D1F67D1C20055AED4 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				849EA5761F5FE4DF0062D31C /* MASExampleBasicView.h */,
+				849EA5771F5FE4DF0062D31C /* MASExampleBasicView.m */,
+			);
+			name = Basic;
+			sourceTree = "<group>";
+		};
+		8419523E1F67D1DF0055AED4 /* Update Constraints */ = {
+			isa = PBXGroup;
+			children = (
+				849EA58C1F5FE4DF0062D31C /* MASExampleUpdateView.h */,
+				849EA58D1F5FE4DF0062D31C /* MASExampleUpdateView.m */,
+			);
+			name = "Update Constraints";
+			sourceTree = "<group>";
+		};
+		8419523F1F67D1ED0055AED4 /* Remake Constraints */ = {
+			isa = PBXGroup;
+			children = (
+				849EA5861F5FE4DF0062D31C /* MASExampleRemakeView.h */,
+				849EA5871F5FE4DF0062D31C /* MASExampleRemakeView.m */,
+			);
+			name = "Remake Constraints";
+			sourceTree = "<group>";
+		};
+		841952401F67D2030055AED4 /* Using Constants */ = {
+			isa = PBXGroup;
+			children = (
+				849EA5781F5FE4DF0062D31C /* MASExampleConstantsView.h */,
+				849EA5791F5FE4DF0062D31C /* MASExampleConstantsView.m */,
+			);
+			name = "Using Constants";
+			sourceTree = "<group>";
+		};
+		841952411F67D2140055AED4 /* Composite Edges */ = {
+			isa = PBXGroup;
+			children = (
+				849EA58A1F5FE4DF0062D31C /* MASExampleSidesView.h */,
+				849EA58B1F5FE4DF0062D31C /* MASExampleSidesView.m */,
+			);
+			name = "Composite Edges";
+			sourceTree = "<group>";
+		};
+		841952421F67D2220055AED4 /* Aspect Fit */ = {
+			isa = PBXGroup;
+			children = (
+				849EA5721F5FE4DF0062D31C /* MASExampleAspectFitView.h */,
+				849EA5731F5FE4DF0062D31C /* MASExampleAspectFitView.m */,
+			);
+			name = "Aspect Fit";
+			sourceTree = "<group>";
+		};
+		841952431F67D22D0055AED4 /* Basic Animated */ = {
+			isa = PBXGroup;
+			children = (
+				849EA56E1F5FE4DF0062D31C /* MASExampleAnimatedView.h */,
+				849EA56F1F5FE4DF0062D31C /* MASExampleAnimatedView.m */,
+			);
+			name = "Basic Animated";
+			sourceTree = "<group>";
+		};
+		841952441F67D2390055AED4 /* Debugging Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				849EA57A1F5FE4DF0062D31C /* MASExampleDebuggingView.h */,
+				849EA57B1F5FE4DF0062D31C /* MASExampleDebuggingView.m */,
+			);
+			name = "Debugging Helpers";
+			sourceTree = "<group>";
+		};
+		841952451F67D2470055AED4 /* Bacony Labels */ = {
+			isa = PBXGroup;
+			children = (
+				849EA57E1F5FE4DF0062D31C /* MASExampleLabelView.h */,
+				849EA57F1F5FE4DF0062D31C /* MASExampleLabelView.m */,
+			);
+			name = "Bacony Labels";
+			sourceTree = "<group>";
+		};
+		841952461F67D2510055AED4 /* UIScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				849EA5881F5FE4DF0062D31C /* MASExampleScrollView.h */,
+				849EA5891F5FE4DF0062D31C /* MASExampleScrollView.m */,
+			);
+			name = UIScrollView;
+			sourceTree = "<group>";
+		};
+		841952471F67D25A0055AED4 /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				849EA5701F5FE4DF0062D31C /* MASExampleArrayView.h */,
+				849EA5711F5FE4DF0062D31C /* MASExampleArrayView.m */,
+			);
+			name = Array;
+			sourceTree = "<group>";
+		};
+		841952481F67D2690055AED4 /* Attribute Chaining */ = {
+			isa = PBXGroup;
+			children = (
+				849EA5741F5FE4DF0062D31C /* MASExampleAttributeChainingView.h */,
+				849EA5751F5FE4DF0062D31C /* MASExampleAttributeChainingView.m */,
+			);
+			name = "Attribute Chaining";
+			sourceTree = "<group>";
+		};
+		841952491F67D2730055AED4 /* Margins */ = {
+			isa = PBXGroup;
+			children = (
+				849EA5841F5FE4DF0062D31C /* MASExampleMarginView.h */,
+				849EA5851F5FE4DF0062D31C /* MASExampleMarginView.m */,
+			);
+			name = Margins;
+			sourceTree = "<group>";
+		};
+		8419524A1F67D27E0055AED4 /* Views Distribute */ = {
+			isa = PBXGroup;
+			children = (
+				849EA57C1F5FE4DF0062D31C /* MASExampleDistributeView.h */,
+				849EA57D1F5FE4DF0062D31C /* MASExampleDistributeView.m */,
+			);
+			name = "Views Distribute";
+			sourceTree = "<group>";
+		};
 		849EA5551F5FE4870062D31C /* LearnMasonryOfficialDemo */ = {
 			isa = PBXGroup;
 			children = (
 				849EA5A21F5FE5C50062D31C /* Masonry */,
-				849EA56B1F5FE4C40062D31C /* Masonry iOS Examples-Prefix.pch */,
-				849EA56C1F5FE4DF0062D31C /* MASAppDelegate.h */,
-				849EA56D1F5FE4DF0062D31C /* MASAppDelegate.m */,
-				849EA56E1F5FE4DF0062D31C /* MASExampleAnimatedView.h */,
-				849EA56F1F5FE4DF0062D31C /* MASExampleAnimatedView.m */,
-				849EA5701F5FE4DF0062D31C /* MASExampleArrayView.h */,
-				849EA5711F5FE4DF0062D31C /* MASExampleArrayView.m */,
-				849EA5721F5FE4DF0062D31C /* MASExampleAspectFitView.h */,
-				849EA5731F5FE4DF0062D31C /* MASExampleAspectFitView.m */,
-				849EA5741F5FE4DF0062D31C /* MASExampleAttributeChainingView.h */,
-				849EA5751F5FE4DF0062D31C /* MASExampleAttributeChainingView.m */,
-				849EA5761F5FE4DF0062D31C /* MASExampleBasicView.h */,
-				849EA5771F5FE4DF0062D31C /* MASExampleBasicView.m */,
-				849EA5781F5FE4DF0062D31C /* MASExampleConstantsView.h */,
-				849EA5791F5FE4DF0062D31C /* MASExampleConstantsView.m */,
-				849EA57A1F5FE4DF0062D31C /* MASExampleDebuggingView.h */,
-				849EA57B1F5FE4DF0062D31C /* MASExampleDebuggingView.m */,
-				849EA57C1F5FE4DF0062D31C /* MASExampleDistributeView.h */,
-				849EA57D1F5FE4DF0062D31C /* MASExampleDistributeView.m */,
-				849EA57E1F5FE4DF0062D31C /* MASExampleLabelView.h */,
-				849EA57F1F5FE4DF0062D31C /* MASExampleLabelView.m */,
+				8419523C1F67D15E0055AED4 /* support */,
+				8419523D1F67D1C20055AED4 /* Basic */,
+				8419523E1F67D1DF0055AED4 /* Update Constraints */,
+				8419523F1F67D1ED0055AED4 /* Remake Constraints */,
+				841952401F67D2030055AED4 /* Using Constants */,
+				841952411F67D2140055AED4 /* Composite Edges */,
+				841952421F67D2220055AED4 /* Aspect Fit */,
+				841952431F67D22D0055AED4 /* Basic Animated */,
+				841952441F67D2390055AED4 /* Debugging Helpers */,
+				841952451F67D2470055AED4 /* Bacony Labels */,
+				841952461F67D2510055AED4 /* UIScrollView */,
+				841952471F67D25A0055AED4 /* Array */,
+				841952481F67D2690055AED4 /* Attribute Chaining */,
+				841952491F67D2730055AED4 /* Margins */,
+				8419524A1F67D27E0055AED4 /* Views Distribute */,
 				849EA5801F5FE4DF0062D31C /* MASExampleLayoutGuideViewController.h */,
 				849EA5811F5FE4DF0062D31C /* MASExampleLayoutGuideViewController.m */,
-				849EA5821F5FE4DF0062D31C /* MASExampleListViewController.h */,
-				849EA5831F5FE4DF0062D31C /* MASExampleListViewController.m */,
-				849EA5841F5FE4DF0062D31C /* MASExampleMarginView.h */,
-				849EA5851F5FE4DF0062D31C /* MASExampleMarginView.m */,
-				849EA5861F5FE4DF0062D31C /* MASExampleRemakeView.h */,
-				849EA5871F5FE4DF0062D31C /* MASExampleRemakeView.m */,
-				849EA5881F5FE4DF0062D31C /* MASExampleScrollView.h */,
-				849EA5891F5FE4DF0062D31C /* MASExampleScrollView.m */,
-				849EA58A1F5FE4DF0062D31C /* MASExampleSidesView.h */,
-				849EA58B1F5FE4DF0062D31C /* MASExampleSidesView.m */,
-				849EA58C1F5FE4DF0062D31C /* MASExampleUpdateView.h */,
-				849EA58D1F5FE4DF0062D31C /* MASExampleUpdateView.m */,
-				849EA58E1F5FE4DF0062D31C /* MASExampleViewController.h */,
-				849EA58F1F5FE4DF0062D31C /* MASExampleViewController.m */,
-				849EA5591F5FE4870062D31C /* AppDelegate.h */,
-				849EA55A1F5FE4870062D31C /* AppDelegate.m */,
-				849EA55C1F5FE4870062D31C /* ViewController.h */,
-				849EA55D1F5FE4870062D31C /* ViewController.m */,
-				849EA55F1F5FE4870062D31C /* Main.storyboard */,
 				849EA5621F5FE4870062D31C /* Assets.xcassets */,
 				849EA5641F5FE4870062D31C /* LaunchScreen.storyboard */,
 				849EA5671F5FE4870062D31C /* Info.plist */,
@@ -421,7 +528,6 @@
 			files = (
 				849EA5661F5FE4870062D31C /* LaunchScreen.storyboard in Resources */,
 				849EA5631F5FE4870062D31C /* Assets.xcassets in Resources */,
-				849EA5611F5FE4870062D31C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,7 +576,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -503,11 +609,9 @@
 				849EA5C41F5FE5C50062D31C /* View+MASAdditions.m in Sources */,
 				849EA5901F5FE4DF0062D31C /* MASAppDelegate.m in Sources */,
 				849EA5BD1F5FE5C50062D31C /* MASConstraint.m in Sources */,
-				849EA55E1F5FE4870062D31C /* ViewController.m in Sources */,
 				849EA5C11F5FE5C50062D31C /* MASViewConstraint.m in Sources */,
 				849EA5951F5FE4DF0062D31C /* MASExampleBasicView.m in Sources */,
 				849EA5961F5FE4DF0062D31C /* MASExampleConstantsView.m in Sources */,
-				849EA55B1F5FE4870062D31C /* AppDelegate.m in Sources */,
 				849EA59C1F5FE4DF0062D31C /* MASExampleMarginView.m in Sources */,
 				849EA5991F5FE4DF0062D31C /* MASExampleLabelView.m in Sources */,
 				849EA5941F5FE4DF0062D31C /* MASExampleAttributeChainingView.m in Sources */,
@@ -543,14 +647,6 @@
 				6C2592471F4D8DFD004F094D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		849EA55F1F5FE4870062D31C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				849EA5601F5FE4870062D31C /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		849EA5641F5FE4870062D31C /* LaunchScreen.storyboard */ = {
@@ -738,6 +834,7 @@
 				849EA5691F5FE4870062D31C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
