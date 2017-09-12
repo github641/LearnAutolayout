@@ -28,7 +28,9 @@
 }
 
 - (void)loadView {
+    #pragma mark - ================== 这个地方是 view的替换，原本的view，换为了各个demo中的view ==================
     self.view = self.viewClass.new;
+    
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
