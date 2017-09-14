@@ -115,12 +115,12 @@
     
     //if you want to use Masonry without the mas_ prefix
     //define MAS_SHORTHAND before importing Masonry.h see Masonry iOS Examples-Prefix.pch
-    // 在调用masonry的时候，不写mas_的方法：在引入Masonry.h之前 定义MAN_SHORTHAND
+    // 在调用masonry的时候，不写mas_的方法：在引入Masonry.h之前 定义MAS_SHORTHAND
 
     UIView *superView = self;
     [greenV makeConstraints:^(MASConstraintMaker *make){
 
-        // lzy170912注：可以使用 .offset = padding ，也可以像这里一样直接链式语法。
+        // lzy170912注：可以使用 .offset = padding ，也可以像这里一样直接链式语法。毕竟链式语法是Masonry的特色。
         make.top.greaterThanOrEqualTo(superView.top).offset(padding);
         make.left.equalTo(superView.left).offset(padding);
         make.bottom.equalTo(blueV.top).offset(-padding);
