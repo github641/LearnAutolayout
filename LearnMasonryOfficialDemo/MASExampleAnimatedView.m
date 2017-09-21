@@ -148,14 +148,18 @@
     
     /* lzy170920注:
      思路：
+
      1、统一一个padding，这个很重要，我写的时候，就有的是10，有的是30
-     2、数组装 视图的 edges约束（相对于父视图、优先级低）、与兄弟视图的关系的约束，将来遍历改变
+     2、
+     ①、数组装 视图的 edges约束（相对于父视图、优先级低，三个视图都有）
+     make.edges.equalTo(superview).insets(paddingInsets).priorityLow(),这个约束住了横屏和竖屏的。而我自己写的，在横屏时并不可用
+     ②、与兄弟视图的关系的约束，将来遍历改变
      3、让red green视图等宽等高，两两与 blue高相等
      
      让 数组中的约束的 constraint.insets 不断在 由10 组成的Insets和 100组成的Insets两个值之间变化。
      
      一个疑问，是否数组中所有的约束都有insets属性呢？？？
-     验证：数组中有6个约束
+     验证：数组中有6个约束insets，看头文件，它是block类型
      打印看下：都有打印，对象只有两个，奇怪
      <__NSMallocBlock__: 0x60800024bca0>time:1
      <__NSMallocBlock__: 0x6000002437b0>time:2
@@ -163,6 +167,14 @@
      <__NSMallocBlock__: 0x60800024bca0>time:4
      <__NSMallocBlock__: 0x6000002437b0>time:5
      <__NSMallocBlock__: 0x6000002437b0>time:6
+     
+     比如把redView的这条约束放到数组外面：
+     make.bottom.equalTo(blueView.mas_top).offset(-padding),
+那么遍历的时候，就是5条，且红蓝视图间距不再发生变化。
+     TODO: #待完成#
+     也就是说，这条约束创建时，使用的是offset。
+     但是遍历的时候，改变了这条约束的 insets,即对应改变了这条约束的offset，那么offset是啥呢，他们之间的关系是怎么样的？？？
+     
      */
     
     
