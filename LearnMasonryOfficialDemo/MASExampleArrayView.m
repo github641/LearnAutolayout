@@ -8,8 +8,6 @@
 
 #import "MASExampleArrayView.h"
 
-
-
 @interface MASExampleArrayView ()
 
 
