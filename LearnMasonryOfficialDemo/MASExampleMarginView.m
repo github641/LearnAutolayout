@@ -20,8 +20,14 @@
         [self addSubview:v];
         v.backgroundColor = [self randomColor];
         
-        
-        UIEdgeInsets inset = UIEdgeInsetsMake(3 , 6 , 9, 12 );
+        /* lzy170926注:
+         发现这里的insets的 值的设定，没有用.
+         😓，当然没有用，因为没有用上
+         */
+        UIEdgeInsets inset = UIEdgeInsetsMake(5 , 10 , 15, 20 );
+//        inset = UIEdgeInsetsMake(0 , 0 , 0, 0 );
+#warning inset需要添加到view上
+        v.layoutMargins = inset;
         
         //        if (lastView) {
         //            [v mas_makeConstraints:^(MASConstraintMaker *make){
